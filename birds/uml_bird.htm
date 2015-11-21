@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Joshua Shields</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+	<meta name="mobileoptimized" content="0" />
+	<meta name="description" content="Joshua Shields' UML diagram for IT 211's Project 6.">
+	<meta name="author" content="Joshua Shields" />
+	<style>
+		html, body, #wrapper{
+			min-height: 100%;
+			background-color: #eee;
+			color: #111;
+			margin: 0;
+			font-family: Helvetica, Arial, sans-serif;
+		}
+		header, footer{
+			background-color: #111;
+			color: #eee;
+			text-align: center;
+		}
+		address{
+			display: inline;
+		}
+		label{
+			display: block;
+			text-align: center;
+			font-weight: bold;
+			font-size: 1.5em;
+		}
+		hr{
+			border: 1px solid #111;
+		}
+		code{
+			background-color: #ffb;
+			color: #333;
+			font-family: monospace;
+		}
+		#bird-uml{
+			border: 2px solid #111;
+			font-family: monospace;
+			font-size: 1em;
+		}
+		#bird-uml>ul{
+			list-style-type: none;
+		}
+		.col{
+			display: block;
+			margin: 0 auto;
+			width: 50%;
+		}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+<header>
+	<h1>IT 211 Project 6 - Bird UML Diagram</h1>
+</header>
+<main role="main" class="col">
+	<div id="bird-uml">
+		<label>Bird</label>
+		<hr>
+		<ul>
+			<li>- @@flight_birds</li>
+			<li>- @@number_of_birds</li>
+			<li>- @@wild_birds</li>
+			<li>- @name</li>
+			<li>- @species</li>
+			<li>- @gender</li>
+			<li>- @description</li>
+			<li>- @habitat</li>
+			<li>- @can_fly</li>
+		</ul>
+		<hr>
+		<ul>
+			<li>- initialize(name, species, gender, description, habitat)</li>
+			<li>+ C new(name, species, gender, description, habitat) : Bird</li>
+			<li>+ name() : String</li>
+			<li>+ species() : String</li>
+			<li>+ gender() : String</li>
+			<li>+ description() : String</li>
+			<li>+ habitat() : String</li>
+			<li>+ can_fly?() : Boolean</li>
+			<li>+ C number_of_birds() : Fixnum</li>
+			<li>+ C wild_birds() : Array</li>
+			<li>+ C flight_birds() : Hash</li>
+			<li>+ name=(String)</li>
+			<li>+ species=(String)</li>
+			<li>+ gender=(Boolean)</li>
+			<li>+ description=(String)</li>
+			<li>+ habitat=(String)</li>
+			<li>+ C can_fly(String species)</li>
+			<li>+ C cannot_fly(String species)</li>
+			<li>+ peck()</li>
+			<li>+ pose()</li>
+			<li>+ to_s(): String</li>
+			<li>+ C to_yaml() : String</li>
+			<li>+ C print_birds()</li>
+		</ul>
+	</div>
+	<p>
+		The Bird class represents a bird in my Ruby bird making and bird watching game.
+		The <code>number_of_birds</code> is automatically updated when a new bird is created using <code>new</code>,
+		at which point the <code>initialize</code> method is called and the number of birds incremented.
+		<code>wild_birds</code> is an Array belonging to the entire Bird class that gets populated with birds as they are created.
+		<code>flight_birds</code> is a Hash that contains bird species as keys and Boolean values as values in order to indicate whether or not a given species of bird can fly.
+		For example, the key "penguin" would return a value of <code>false</code> from the Hash whereas a key of "eagle" would return <code>true</code>.
+		Each bird has a name, species that may or may not be able to fly, gender (male if value is <code>true</code>, female if value is <code>false</code>), description, and habitat.
+	</p>
+</main>
+<footer>
+	&copy;
+	<address>
+		Joshua Shields. Contact at: <a class="contact-email" href="mailto:josh@joshuashields.com" tabindex="1">josh@joshuashields.com</a>
+	</address>
+</footer>
+</div><!-- end of wrapper -->
+</body>
+</html>
