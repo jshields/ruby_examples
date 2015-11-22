@@ -20,7 +20,7 @@ $total_credit_hours = 0.0
 # initialize $total_grade_points to 0.0
 $total_grade_points = 0.0
 
-# -- Open the file and read its records row by row, looking for matches in records for the name of the student that the user searched for --
+# Open the file and read its records row by row, looking for matches in records for the name of the student that the user searched for --
 # open input file to create file object fin
 # Note: student-records.txt file is required in the same directory, provided with this assignment
 fin = File.open("student-records.txt", "r")
@@ -50,6 +50,8 @@ while line = fin.gets
 	# If the current record on each of the records matches the student we are looking for, take that record into the result
     if first_name == desired_first_name && last_name == desired_last_name
     	$found = true
+
+    	# Assign grade_points based on the credit hours and the point value of the grade, with 4.0 being A, etc.
     	if grade == "A"
             grade_points = credit_hours * 4
         elsif grade == "B"
@@ -87,7 +89,7 @@ end
 # print result
 print result
 
-#open output file to write out result there as well [NOTE to grader: this is added functionality not in the instructions]
+#open output file to write out result there as well. Note to grader: this is added functionality not in the instructions
 fout = File.open("#{desired_first_name}_#{desired_last_name}_result.txt", "w")
 fout.print result
 #close the output file before the program completes
